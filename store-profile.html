@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Store Profile | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="store-profile.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="dashboard.js" defer></script>
+    <script src="store-profile.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link is-active" href="store-profile.html" aria-current="page"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="topbar-title" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="store-profile-content">
+                <nav class="profile-breadcrumbs" aria-label="Breadcrumb">
+                    <a href="dashboard.html">Workspace</a>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">Store profile</span>
+                </nav>
+
+                <header class="profile-page-heading">
+                    <div>
+                        <p class="profile-eyebrow">ACCOUNT SETTINGS</p>
+                        <h1>Store profile</h1>
+                        <p>Keep your business, pickup and payout details up to date.</p>
+                    </div>
+                    <span class="profile-account-status"><i aria-hidden="true"></i> Verified account</span>
+                </header>
+
+                <nav class="profile-section-nav" aria-label="Profile sections">
+                    <a class="is-active" href="#business-section" aria-current="location"><span>01</span> Business</a>
+                    <a href="#pickup-section"><span>02</span> Pickup address</a>
+                    <a href="#payout-section"><span>03</span> Payout details</a>
+                </nav>
+
+                <section class="profile-card" aria-labelledby="merchant-name">
+                    <div class="merchant-summary">
+                        <span class="merchant-avatar" aria-hidden="true">NF</span>
+                        <div class="merchant-summary-copy">
+                            <h2 id="merchant-name">Merchant Store</h2>
+                            <p>Merchant ID <strong data-merchant-id></strong></p>
+                            <span class="verified-badge">VERIFIED MERCHANT</span>
+                        </div>
+                        <span class="profile-completion"><strong>03</strong><span>Profile sections</span></span>
+                    </div>
+
+                    <form id="store-profile-form">
+                        <section class="profile-section" id="business-section" aria-labelledby="business-heading">
+                            <div class="profile-section-heading">
+                                <span class="section-icon" aria-hidden="true">BI</span>
+                                <div>
+                                    <h3 id="business-heading">Business information</h3>
+                                    <p>Your store identity and primary contact details.</p>
+                                </div>
+                            </div>
+                            <div class="profile-field-grid">
+                                <label>Business name<input name="businessName" autocomplete="organization" required></label>
+                                <label>Business type<input name="businessType" required></label>
+                                <label>Owner name<input name="ownerName" autocomplete="name" required></label>
+                                <label>Contact number<input name="contactNumber" type="tel" autocomplete="tel" required></label>
+                                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                                <label>WhatsApp number<input name="whatsappNumber" type="tel" required></label>
+                            </div>
+                        </section>
+
+                        <section class="profile-section" id="pickup-section" aria-labelledby="pickup-heading">
+                            <div class="profile-section-heading">
+                                <span class="section-icon" aria-hidden="true">PA</span>
+                                <div>
+                                    <h3 id="pickup-heading">Pickup address</h3>
+                                    <p>Where SpeedX collects parcels from your store.</p>
+                                </div>
+                            </div>
+                            <div class="profile-field-grid">
+                                <label>Street address<input name="streetAddress" autocomplete="street-address" required></label>
+                                <label>City<input name="city" autocomplete="address-level2" required></label>
+                                <label>District<input name="district" required></label>
+                            </div>
+                        </section>
+
+                        <section class="profile-section" id="payout-section" aria-labelledby="payout-heading">
+                            <div class="profile-section-heading">
+                                <span class="section-icon" aria-hidden="true">BP</span>
+                                <div>
+                                    <h3 id="payout-heading">Bank payout details</h3>
+                                    <p>Bank account used for your COD settlements.</p>
+                                </div>
+                            </div>
+                            <div class="profile-field-grid">
+                                <label>Bank
+                                    <select name="bank" required>
+                                        <option value="">Select a bank</option>
+                                        <optgroup label="Licensed Commercial Banks">
+                                            <option>Amana Bank PLC</option>
+                                            <option>Bank of Ceylon</option>
+                                            <option>Bank of China Ltd</option>
+                                            <option>Cargills Bank PLC</option>
+                                            <option>Citibank N.A.</option>
+                                            <option>Commercial Bank of Ceylon PLC</option>
+                                            <option>Deutsche Bank AG</option>
+                                            <option>DFCC Bank PLC</option>
+                                            <option>Habib Bank Ltd</option>
+                                            <option>Hatton National Bank PLC</option>
+                                            <option>Indian Bank</option>
+                                            <option>Indian Overseas Bank</option>
+                                            <option>MCB Bank Ltd</option>
+                                            <option>National Development Bank PLC</option>
+                                            <option>Nations Trust Bank PLC</option>
+                                            <option>Pan Asia Banking Corporation PLC</option>
+                                            <option>People's Bank</option>
+                                            <option>Public Bank Berhad</option>
+                                            <option>Sampath Bank PLC</option>
+                                            <option>Seylan Bank PLC</option>
+                                            <option>Standard Chartered Bank</option>
+                                            <option>State Bank of India</option>
+                                            <option>The Hongkong and Shanghai Banking Corporation Limited</option>
+                                            <option>Union Bank of Colombo PLC</option>
+                                        </optgroup>
+                                        <optgroup label="Licensed Specialized Banks">
+                                            <option>HDFC Bank</option>
+                                            <option>National Savings Bank</option>
+                                            <option>Pradeshiya Sanwardhana Bank</option>
+                                            <option>Sanasa Development Bank PLC</option>
+                                            <option>Sri Lanka Savings Bank Ltd</option>
+                                            <option>State Mortgage &amp; Investment Bank</option>
+                                        </optgroup>
+                                    </select>
+                                </label>
+                                <label>Branch<input name="branch" required></label>
+                                <label>Account number<input name="accountNumber" type="password" autocomplete="new-password" inputmode="numeric" minlength="6" maxlength="20" pattern="[0-9]{6,20}" placeholder="Leave blank to keep current number"></label>
+                            </div>
+                        </section>
+
+                        <div class="profile-form-actions">
+                            <p class="profile-save-hint">Changes save automatically after you finish editing.</p>
+                            <div class="profile-save-controls">
+                                <p id="profile-save-status" role="status" aria-live="polite"></p>
+                                <button class="primary-button" id="save-profile-button" type="submit"><span aria-hidden="true">✓</span> Save now</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

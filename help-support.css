@@ -1,0 +1,402 @@
+.help-portal-link {
+    color: #23332a;
+    text-decoration: none;
+}
+
+.help-portal-link:hover {
+    color: #0d8048;
+}
+
+.help-content {
+    width: min(100%, 1320px);
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.help-heading {
+    margin-bottom: 24px;
+}
+
+.help-eyebrow {
+    margin: 0 0 8px;
+    color: #0d8048;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.help-heading h1 {
+    margin: 0 0 8px;
+    color: #23332a;
+    font-size: clamp(27px, 3vw, 34px);
+    letter-spacing: -.7px;
+}
+
+.help-heading > p:last-child {
+    margin: 0;
+    color: #596a60;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.support-contacts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.support-contact {
+    display: flex;
+    min-height: 130px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 17px 19px;
+    color: #23332a;
+    text-decoration: none;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.support-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgb(34 58 43 / 8%);
+}
+
+.whatsapp-contact {
+    border-color: #d7eddf;
+    background: #eaf7ee;
+}
+
+.email-contact {
+    border-color: #e5ebe7;
+    background: #fff;
+}
+
+.hotline-contact {
+    border-color: #f2e3cd;
+    background: #fff5e9;
+}
+
+.contact-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #33473b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hotline-contact .contact-label {
+    color: #8d4b0d;
+}
+
+.contact-icon {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 8px;
+    background: rgb(255 255 255 / 75%);
+    color: #0d8048;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.hotline-contact .contact-icon {
+    color: #a45b12;
+}
+
+.support-contact strong {
+    color: #23332a;
+    font-size: 17px;
+}
+
+.support-contact small {
+    color: #586a5f;
+    font-size: 12px;
+}
+
+.help-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, .9fr);
+    align-items: stretch;
+    gap: 18px;
+}
+
+.support-form-card,
+.quick-help-card {
+    border: 1px solid #e1e9e3;
+    border-radius: 13px;
+    padding: 22px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgb(34 58 43 / 3%);
+}
+
+.help-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.help-card-icon {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 11px;
+    background: #eaf7ee;
+    color: #0d8048;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.quick-help-icon {
+    background: #f1f5f2;
+    color: #45594c;
+    font-size: 10px;
+}
+
+.help-card-heading h2 {
+    margin: 0 0 5px;
+    color: #23332a;
+    font-size: 17px;
+}
+
+.help-card-heading p {
+    margin: 0;
+    color: #617268;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#support-ticket-form {
+    display: grid;
+    gap: 15px;
+}
+
+#support-ticket-form label {
+    display: grid;
+    gap: 7px;
+    color: #35473c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.optional-label {
+    color: #718177;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+#support-ticket-form input,
+#support-ticket-form select,
+#support-ticket-form textarea {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #d6e0d9;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #fff;
+    color: #23332a;
+    font-size: 14px;
+}
+
+#support-ticket-form textarea {
+    min-height: 112px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+#support-ticket-form input::placeholder,
+#support-ticket-form textarea::placeholder {
+    color: #75847a;
+    opacity: 1;
+}
+
+#support-ticket-form input:focus,
+#support-ticket-form select:focus,
+#support-ticket-form textarea:focus {
+    border-color: #0d8048;
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(13 128 72 / 11%);
+}
+
+.support-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 2px;
+}
+
+.support-form-footer .primary-button {
+    min-height: 44px;
+    gap: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+#support-form-status {
+    margin: 0;
+    color: #a43d2d;
+    font-size: 12px;
+}
+
+.form-privacy-note {
+    margin: -7px 0 0;
+    color: #617268;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.faq-list details {
+    border-bottom: 1px solid #e8eee9;
+}
+
+.faq-list summary {
+    position: relative;
+    padding: 16px 27px 16px 0;
+    color: #2e4035;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    color: #0d8048;
+    content: "+";
+    font-size: 21px;
+    font-weight: 400;
+    transform: translateY(-52%);
+}
+
+.faq-list details[open] summary::after {
+    content: "−";
+}
+
+.faq-list summary:focus-visible,
+.support-contact:focus-visible {
+    outline: 3px solid #ffab66;
+    outline-offset: 3px;
+}
+
+.faq-list details p {
+    margin: -4px 0 16px;
+    color: #56675d;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.faq-list details a {
+    color: #096b3b;
+    font-weight: 700;
+}
+
+.faq-contact-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    border: 1px solid #e4eee7;
+    border-radius: 9px;
+    padding: 12px;
+    background: #f7faf8;
+}
+
+.faq-contact-note > span {
+    display: grid;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    background: #e4f2e8;
+    color: #0d8048;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.faq-contact-note p {
+    margin: 1px 0 0;
+    color: #4e6055;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+    .help-content {
+        padding: 28px 22px;
+    }
+
+    .help-main-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+        gap: 14px;
+    }
+
+    .support-form-card,
+    .quick-help-card {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 760px) {
+    .help-content {
+        padding: 24px 18px 32px;
+    }
+
+    .support-contacts {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .support-contact {
+        min-height: 105px;
+    }
+
+    .help-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .help-content {
+        padding: 22px 14px 28px;
+    }
+
+    .help-heading {
+        margin-bottom: 19px;
+    }
+
+    .help-heading > p:last-child {
+        font-size: 14px;
+    }
+
+    .support-form-card,
+    .quick-help-card {
+        padding: 17px 15px;
+    }
+
+    .support-form-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .support-form-footer .primary-button {
+        width: 100%;
+    }
+}

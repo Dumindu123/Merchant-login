@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>All Parcels | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="parcel-list.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="parcel-storage.js?v=20261101-clean-demo" defer></script>
+    <script src="parcel-list.js?v=20261101-database-fix1" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link is-active" href="parcel-list.html" aria-current="page"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="topbar-title parcel-topbar-title" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="parcel-list-content">
+                <div class="parcel-list-heading">
+                    <div>
+                        <h1>All parcels</h1>
+                        <p>Search, filter and manage every parcel booked through your merchant account.</p>
+                    </div>
+                    <a class="primary-button" href="create-parcel.html"><span aria-hidden="true">+</span> Create Parcel</a>
+                </div>
+
+                <form class="filter-card" id="parcel-filter-form">
+                    <label class="search-field">
+                        <span>Search tracking / customer</span>
+                        <input id="parcel-search" type="search" placeholder="Search..." autocomplete="off">
+                    </label>
+                    <label class="filter-select">
+                        <span class="visually-hidden">Parcel status</span>
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="In Transit">In Transit</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Returned">Returned</option>
+                        </select>
+                    </label>
+                    <label class="filter-select">
+                        <span class="visually-hidden">Date range</span>
+                        <select id="date-filter">
+                            <option value="30">Last 30 days</option>
+                            <option value="7">Last 7 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="all">All time</option>
+                        </select>
+                    </label>
+                    <button class="secondary-button apply-filters-button" type="submit">Apply Filters</button>
+                </form>
+
+                <section class="parcel-list-card" aria-labelledby="parcel-count-heading">
+                    <div class="parcel-list-card-heading">
+                        <h2 id="parcel-count-heading"><span id="parcel-count">0</span> parcels</h2>
+                        <button class="export-button" id="export-csv" type="button">Export CSV</button>
+                    </div>
+                    <div class="parcel-list-table-wrap">
+                        <table class="parcel-list-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">TRACKING ID</th>
+                                    <th scope="col">RECIPIENT</th>
+                                    <th scope="col">DESTINATION</th>
+                                    <th scope="col">BOOKED DATE</th>
+                                    <th scope="col">COD</th>
+                                    <th scope="col">STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="parcel-results"></tbody>
+                        </table>
+                        <p class="empty-parcels" id="empty-parcels">Loading parcels...</p>
+                    </div>
+                    <footer class="parcel-list-footer">
+                        <p id="results-summary" aria-live="polite"></p>
+                        <nav class="pagination" id="pagination" aria-label="Parcel pages"></nav>
+                    </footer>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

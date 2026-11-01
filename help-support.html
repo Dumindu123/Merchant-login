@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Help &amp; Support | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="help-support.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="dashboard.js" defer></script>
+    <script src="help-support.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link is-active" href="help-support.html" aria-current="page"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="topbar-title help-portal-link" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="help-content">
+                <header class="help-heading">
+                    <p class="help-eyebrow">WE'RE HERE FOR YOU</p>
+                    <h1>Help &amp; support</h1>
+                    <p>Get answers and support for your SpeedX deliveries.</p>
+                </header>
+
+                <section class="support-contacts" aria-label="Contact support">
+                    <a class="support-contact whatsapp-contact" href="https://wa.me/94703755524">
+                        <span class="contact-label"><span class="contact-icon" aria-hidden="true">WA</span> WhatsApp support</span>
+                        <strong>070 375 5524</strong>
+                        <small>Chat with our operations team</small>
+                    </a>
+                    <a class="support-contact email-contact" href="mailto:support@speedx.lk">
+                        <span class="contact-label"><span class="contact-icon" aria-hidden="true">@</span> Email support</span>
+                        <strong>support@speedx.lk</strong>
+                        <small>Response during business hours</small>
+                    </a>
+                    <a class="support-contact hotline-contact" href="tel:+94703755524">
+                        <span class="contact-label"><span class="contact-icon" aria-hidden="true">24</span> Operations hotline</span>
+                        <strong>070 375 5524</strong>
+                        <small>For urgent delivery issues</small>
+                    </a>
+                </section>
+
+                <div class="help-main-grid">
+                    <section class="support-form-card" aria-labelledby="support-form-heading">
+                        <div class="help-card-heading">
+                            <span class="help-card-icon" aria-hidden="true">?</span>
+                            <div>
+                                <h2 id="support-form-heading">Submit a support request</h2>
+                                <p>Tell us what happened and we'll help you resolve it.</p>
+                            </div>
+                        </div>
+                        <form id="support-ticket-form">
+                            <label>Issue category
+                                <select name="category" required>
+                                    <option value="">Select a category</option>
+                                    <option>Parcel pickup</option>
+                                    <option>Delivery issue</option>
+                                    <option>COD or settlement</option>
+                                    <option>Account or profile</option>
+                                    <option>Other</option>
+                                </select>
+                            </label>
+                            <label>Related tracking number <span class="optional-label">Optional</span>
+                                <input name="trackingNumber" type="text" placeholder="Enter tracking number" autocomplete="off">
+                            </label>
+                            <label>Subject
+                                <input name="subject" type="text" placeholder="Briefly describe your issue" required>
+                            </label>
+                            <label>Message
+                                <textarea name="message" rows="5" placeholder="Include any details that will help us investigate." required></textarea>
+                            </label>
+                            <div class="support-form-footer">
+                                <p id="support-form-status" role="status" aria-live="polite"></p>
+                                <button class="primary-button" type="submit">Continue to email <span aria-hidden="true">→</span></button>
+                            </div>
+                            <p class="form-privacy-note">Your email app will open with your request ready to send.</p>
+                        </form>
+                    </section>
+
+                    <section class="quick-help-card" aria-labelledby="quick-help-heading">
+                        <div class="help-card-heading">
+                            <span class="help-card-icon quick-help-icon" aria-hidden="true">Q&amp;A</span>
+                            <div>
+                                <h2 id="quick-help-heading">Quick help</h2>
+                                <p>Answers to common questions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-list">
+                            <details>
+                                <summary>How do I book a parcel?</summary>
+                                <p>Open <a href="create-parcel.html">New Parcel</a>, enter the recipient and parcel details, then submit the booking. Your tracking number will appear after the parcel is created.</p>
+                            </details>
+                            <details>
+                                <summary>When will COD be settled?</summary>
+                                <p>COD is settled after delivery and reconciliation. View your balance and payout activity in <a href="cod-wallet.html">COD &amp; Wallet</a> or check completed payouts in <a href="settlements.html">Settlements</a>.</p>
+                            </details>
+                            <details>
+                                <summary>How can I request a return?</summary>
+                                <p>Send us a support request with the tracking number and the reason for return. Our operations team will review the request and contact you.</p>
+                            </details>
+                            <details>
+                                <summary>How do I update pickup details?</summary>
+                                <p>Update your business and pickup address in <a href="store-profile.html">Store Profile</a>, then save your changes.</p>
+                            </details>
+                        </div>
+                        <div class="faq-contact-note">
+                            <span aria-hidden="true">i</span>
+                            <p>Still need help? Contact our team using WhatsApp or email.</p>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

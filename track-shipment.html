@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Track a Shipment | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="track-shipment.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="parcel-storage.js" defer></script>
+    <script src="track-shipment.js?v=20261101-database" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link is-active" href="track-shipment.html" aria-current="page"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="topbar-title tracking-topbar-title" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="tracking-page">
+                <header class="page-heading">
+                    <h1>Track a shipment</h1>
+                    <p>Follow your parcel from pickup to delivery.</p>
+                </header>
+
+                <form class="tracking-search" id="tracking-form">
+                    <label for="tracking-number">Enter your SpeedX tracking number</label>
+                    <div class="tracking-search-fields">
+                        <div class="tracking-input-wrap">
+                            <label for="tracking-number">Tracking number</label>
+                            <input id="tracking-number" name="trackingNumber" type="text" placeholder="Enter your tracking number" autocomplete="off" required>
+                        </div>
+                        <button type="submit">Track Parcel</button>
+                    </div>
+                    <p class="tracking-message" id="tracking-message" role="status" aria-live="polite"></p>
+                </form>
+
+                <section class="tracking-results" id="tracking-results" aria-live="polite">
+                    <article class="tracking-timeline-card">
+                        <div class="shipment-heading">
+                            <div>
+                                <h2 id="shipment-id"></h2>
+                                <p id="shipment-route"></p>
+                            </div>
+                            <span class="shipment-status" id="shipment-status"></span>
+                        </div>
+                        <ol class="timeline" id="tracking-timeline"></ol>
+                    </article>
+
+                    <aside class="recipient-card">
+                        <h2>Recipient</h2>
+                        <p class="recipient-name" id="recipient-name"></p>
+                        <p class="recipient-phone" id="recipient-phone"></p>
+                        <p class="recipient-address" id="recipient-address"></p>
+                        <div class="cod-row">
+                            <span>COD Amount</span>
+                            <strong id="recipient-cod"></strong>
+                        </div>
+                    </aside>
+                </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

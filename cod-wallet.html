@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>COD &amp; Wallet | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="cod-wallet.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="cod-wallet.js?v=20261101-database" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link is-active" href="cod-wallet.html" aria-current="page"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="portal-link" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-label="Merchant Store">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="wallet-content">
+                <header class="page-heading">
+                    <h1>COD &amp; wallet</h1>
+                    <p>COD balances update from your saved parcels.</p>
+                </header>
+
+                <section class="balance-grid" aria-label="COD balance summary">
+                    <article class="balance-card balance-available">
+                        <div class="balance-label"><span>Delivered COD estimate</span><i aria-hidden="true"></i></div>
+                        <strong id="wallet-delivered-cod">Loading...</strong>
+                        <p>COD less delivery fee and insurance</p>
+                    </article>
+                    <article class="balance-card balance-transit">
+                        <div class="balance-label"><span>In transit COD</span><i aria-hidden="true"></i></div>
+                        <strong id="wallet-in-transit-cod">Loading...</strong>
+                        <p>From parcels in transit</p>
+                    </article>
+                    <article class="balance-card balance-paid">
+                        <div class="balance-label"><span>Paid this month</span><i aria-hidden="true"></i></div>
+                        <strong id="wallet-paid-this-month">—</strong>
+                        <p id="wallet-paid-note">No payment records available</p>
+                    </article>
+                    <article class="balance-card balance-pending">
+                        <div class="balance-label"><span>Pending reconciliation</span><i aria-hidden="true"></i></div>
+                        <strong id="wallet-pending-cod">Loading...</strong>
+                        <p>From parcels awaiting pickup</p>
+                    </article>
+                </section>
+
+                <section class="settlement-banner" aria-labelledby="settlement-heading">
+                    <div>
+                        <p id="settlement-heading">DELIVERED COD ESTIMATE</p>
+                        <strong id="wallet-settlement-estimate">Loading...</strong>
+                        <span>Estimated from delivered parcels in the database</span>
+                    </div>
+                    <button type="button" class="settlement-button" id="settlement-details-button">View settlement details</button>
+                </section>
+
+                <section class="transactions-card" aria-labelledby="transactions-heading">
+                    <h2 id="transactions-heading">Recent COD transactions</h2>
+                    <div class="transactions-table-wrap">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">TRACKING ID</th>
+                                    <th scope="col">TRANSACTION</th>
+                                    <th scope="col">AMOUNT</th>
+                                    <th scope="col">REFERENCE</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wallet-transactions">
+                                <tr><td colspan="5">Loading COD records...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <dialog class="settlement-dialog" id="settlement-dialog" aria-labelledby="settlement-dialog-heading">
+                    <form method="dialog">
+                        <button class="dialog-close" aria-label="Close settlement details">×</button>
+                    </form>
+                    <h2 id="settlement-dialog-heading">Next settlement details</h2>
+                    <p>Current parcel COD totals from your database.</p>
+                    <dl>
+                        <div><dt>Delivered COD estimate</dt><dd id="dialog-delivered-cod">Loading...</dd></div>
+                        <div><dt>In-transit COD</dt><dd id="dialog-in-transit-cod">Loading...</dd></div>
+                        <div><dt>Pending pickup COD</dt><dd id="dialog-pending-cod">Loading...</dd></div>
+                        <div><dt>Total parcel COD</dt><dd id="dialog-total-cod">Loading...</dd></div>
+                    </dl>
+                </dialog>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

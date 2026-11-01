@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Merchant Dashboard | SpeedX</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="parcel-storage.js" defer></script>
+    <script src="dashboard.js?v=20261101-database" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link is-active" href="#overview" data-page="Overview">
+                    <span class="nav-icon">OV</span><span>Overview</span>
+                </a>
+                <a class="nav-link" href="parcel-list.html" data-page="Parcels">
+                    <span class="nav-icon">PK</span><span>Parcels</span>
+                </a>
+                <a class="nav-link" href="create-parcel.html" data-page="New Parcel">
+                    <span class="nav-icon">NP</span><span>New Parcel</span>
+                </a>
+                <a class="nav-link" href="track-shipment.html" data-page="Track Shipment">
+                    <span class="nav-icon">TR</span><span>Track Shipment</span>
+                </a>
+                <a class="nav-link" href="cod-wallet.html" data-page="COD & Wallet">
+                    <span class="nav-icon">CW</span><span>COD &amp; Wallet</span>
+                </a>
+                <a class="nav-link" href="settlements.html" data-page="Settlements">
+                    <span class="nav-icon">ST</span><span>Settlements</span>
+                </a>
+                <a class="nav-link" href="store-profile.html" data-page="Store Profile">
+                    <span class="nav-icon">SP</span><span>Store Profile</span>
+                </a>
+                <a class="nav-link" href="help-support.html" data-page="Help & Support">
+                    <span class="nav-icon">HP</span><span>Help &amp; Support</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <strong class="topbar-title">Merchant Portal</strong>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="dashboard-content">
+                <div class="welcome-row">
+                    <div>
+                        <h1 data-merchant-welcome>Welcome, merchant <span aria-hidden="true">👋</span></h1>
+                        <p>Here's what's happening with your store deliveries today.</p>
+                    </div>
+                    <a class="primary-button" href="create-parcel.html">
+                        <span aria-hidden="true">+</span> Create New Parcel
+                    </a>
+                </div>
+
+                <section class="stats-grid" aria-label="Delivery statistics">
+                    <article class="stat-card">
+                        <div class="stat-label">Total parcels this month<span class="stat-dot green"></span></div>
+                        <strong class="stat-value" id="monthly-parcel-count">0</strong>
+                        <span class="stat-note" id="monthly-parcel-note">No parcels booked this month</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-label">Pending pickup<span class="stat-dot orange"></span></div>
+                        <strong class="stat-value" id="pending-count">0</strong>
+                        <span class="stat-note warning">Awaiting pickup</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-label">Delivered today<span class="stat-dot green"></span></div>
+                        <strong class="stat-value">—</strong>
+                        <span class="stat-note">Delivery data unavailable</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-label">COD payable to you<span class="stat-dot blue"></span></div>
+                        <strong class="stat-value currency">—</strong>
+                        <span class="stat-note blue-note">No payout data available</span>
+                    </article>
+                </section>
+
+                <section class="analytics-grid" aria-label="Parcel analytics">
+                    <article class="panel activity-panel">
+                        <div class="panel-heading">
+                            <div><h2>Weekly parcel activity</h2><p>Parcels booked over the last 7 days</p></div>
+                            <div class="chart-legend"><span><i class="legend-booked"></i>Booked</span></div>
+                        </div>
+                        <div class="bar-chart chart-empty" id="weekly-parcel-chart" role="img" aria-label="Loading parcel activity">
+                            Loading parcel activity...
+                        </div>
+                    </article>
+
+                    <article class="panel status-panel">
+                        <div class="panel-heading"><h2>Parcel status summary</h2></div>
+                        <div class="status-list">
+                            <div class="status-item"><div><span>Delivered</span><strong id="delivered-count">0</strong></div><i class="status-track"><i class="status-fill delivered" id="delivered-fill"></i></i></div>
+                            <div class="status-item"><div><span>In transit</span><strong id="in-transit-count">0</strong></div><i class="status-track"><i class="status-fill in-transit" id="in-transit-fill"></i></i></div>
+                            <div class="status-item"><div><span>Pending pickup</span><strong id="pending-count-summary">0</strong></div><i class="status-track"><i class="status-fill pending" id="pending-fill"></i></i></div>
+                            <div class="status-item"><div><span>Returned</span><strong id="returned-count">0</strong></div><i class="status-track"><i class="status-fill returned" id="returned-fill"></i></i></div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="panel recent-panel" id="parcels">
+                    <div class="panel-heading">
+                        <h2>Recent parcels</h2>
+                        <a href="parcel-list.html" class="view-all-link">View all <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="parcel-table-wrap">
+                        <table class="parcel-table">
+                            <thead><tr><th>TRACKING ID</th><th>CUSTOMER</th><th>DESTINATION</th><th>COD AMOUNT</th><th>STATUS</th></tr></thead>
+                            <tbody id="parcel-list">
+                                <tr><td colspan="5">No parcels yet. Create a parcel to see it here.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

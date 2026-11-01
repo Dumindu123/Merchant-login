@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Settlement History | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="settlements.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="settlements.js?v=20261101-database" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link" href="create-parcel.html"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link is-active" href="settlements.html" aria-current="page"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="settlements-portal-link" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="settlements-content">
+                <header class="page-heading">
+                    <h1>Settlement history</h1>
+                    <p>Settlement history and payout status from your database.</p>
+                </header>
+
+                <section class="settlement-summary" aria-label="Settlement summary">
+                    <article class="summary-card">
+                        <div class="summary-label"><span>Total settled</span><i class="indicator indicator-green" aria-hidden="true"></i></div>
+                        <strong id="settled-total">Loading...</strong>
+                        <p>Completed settlements</p>
+                    </article>
+                    <article class="summary-card">
+                        <div class="summary-label"><span>Last settlement</span><i class="indicator indicator-green" aria-hidden="true"></i></div>
+                        <strong id="last-settlement-date">—</strong>
+                        <p>Most recent completed payout</p>
+                    </article>
+                    <article class="summary-card">
+                        <div class="summary-label"><span>Next settlement</span><i class="indicator indicator-orange" aria-hidden="true"></i></div>
+                        <strong id="pending-settlement-total">Loading...</strong>
+                        <p class="text-orange">Recorded pending or processing payouts</p>
+                    </article>
+                    <article class="summary-card">
+                        <div class="summary-label"><span>Bank account</span><i class="indicator indicator-blue" aria-hidden="true"></i></div>
+                        <strong id="settlement-bank-name">Loading...</strong>
+                        <p class="text-blue" id="settlement-bank-branch">Registered payout bank</p>
+                    </article>
+                </section>
+
+                <section class="settlement-records" aria-labelledby="records-heading">
+                    <h2 id="records-heading">Settlement records</h2>
+                    <div class="records-table-wrap">
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">SETTLEMENT ID</th>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">PARCELS</th>
+                                    <th scope="col">GROSS COD</th>
+                                    <th scope="col">DEDUCTIONS</th>
+                                    <th scope="col">NET PAID</th>
+                                </tr>
+                            </thead>
+                            <tbody id="settlement-records">
+                                <tr><td colspan="6">Loading settlement history...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

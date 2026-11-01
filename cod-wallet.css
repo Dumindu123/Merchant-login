@@ -1,0 +1,472 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color: #23332a;
+    background: #f5f8f6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+button,
+a {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+    display: flex;
+    min-height: 68px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8eee9;
+    padding: 0 26px;
+    background: #fff;
+}
+
+.portal-link {
+    color: #26372d;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.store-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.store-name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.store-name small {
+    color: #7d8b82;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.store-avatar {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e7f5eb;
+    color: #0d8048;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.wallet-content {
+    width: min(100% - 48px, 1440px);
+    margin: 0 auto;
+    padding: 30px 0 36px;
+}
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.page-heading h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    letter-spacing: -.4px;
+    text-transform: none;
+}
+
+.page-heading p {
+    margin: 0;
+    color: #718177;
+    font-size: 13px;
+}
+
+.balance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.balance-card {
+    min-height: 124px;
+    border: 1px solid #e1eae4;
+    border-radius: 12px;
+    padding: 17px 18px;
+    background: #fff;
+}
+
+.balance-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #637368;
+    font-size: 11px;
+}
+
+.balance-label i {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #11874c;
+}
+
+.balance-transit .balance-label i {
+    background: #326bc2;
+}
+
+.balance-pending .balance-label i {
+    background: #ff851b;
+}
+
+.balance-card > strong {
+    display: block;
+    margin: 10px 0 7px;
+    font-size: clamp(20px, 2.2vw, 26px);
+    letter-spacing: -.3px;
+}
+
+.balance-card > p {
+    margin: 0;
+    color: #098044;
+    font-size: 10px;
+}
+
+.balance-transit > p {
+    color: #2864bf;
+}
+
+.balance-pending > p {
+    color: #e87212;
+}
+
+.settlement-banner {
+    display: flex;
+    min-height: 144px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 24px;
+    border-radius: 13px;
+    padding: 24px 30px;
+    background: #06472b;
+    color: #fff;
+}
+
+.settlement-banner > div {
+    display: grid;
+    gap: 10px;
+}
+
+.settlement-banner p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.settlement-banner strong {
+    font-size: 30px;
+    letter-spacing: -.4px;
+}
+
+.settlement-banner span {
+    color: #d2e5d9;
+    font-size: 11px;
+}
+
+.settlement-button {
+    min-width: 200px;
+    min-height: 44px;
+    border: 0;
+    border-radius: 9px;
+    padding: 0 16px;
+    background: #fff;
+    color: #26372d;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.settlement-button:hover {
+    background: #edf5f0;
+}
+
+.transactions-card {
+    margin-top: 24px;
+    border: 1px solid #e1eae4;
+    border-radius: 13px;
+    padding: 22px;
+    background: #fff;
+}
+
+.transactions-card h2 {
+    margin: 0 0 17px;
+    font-size: 16px;
+}
+
+.transactions-table-wrap {
+    overflow-x: auto;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    color: #64746a;
+    font-size: 11px;
+    text-align: left;
+}
+
+.transactions-table th {
+    height: 38px;
+    padding: 0 12px;
+    background: #f3f7f4;
+    color: #5e7065;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.transactions-table th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.transactions-table th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.transactions-table td {
+    height: 52px;
+    border-top: 1px solid #e3ebe5;
+    border-bottom: 1px solid #e3ebe5;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+.transactions-table td:first-child {
+    border-left: 1px solid #e3ebe5;
+    border-radius: 8px 0 0 8px;
+    color: #26372d;
+    font-weight: 700;
+}
+
+.transactions-table td:last-child {
+    border-right: 1px solid #e3ebe5;
+    border-radius: 0 8px 8px 0;
+}
+
+.settlement-dialog {
+    width: min(100% - 32px, 460px);
+    border: 1px solid #e1eae4;
+    border-radius: 14px;
+    padding: 26px;
+    color: #23332a;
+    box-shadow: 0 20px 70px rgb(22 46 32 / 22%);
+}
+
+.settlement-dialog::backdrop {
+    background: rgb(20 35 26 / 45%);
+}
+
+.settlement-dialog form {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+.dialog-close {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f5f2;
+    color: #415349;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.settlement-dialog h2 {
+    margin: 0 36px 8px 0;
+    font-size: 20px;
+}
+
+.settlement-dialog > p {
+    color: #718177;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.settlement-dialog dl {
+    display: grid;
+    gap: 0;
+    margin: 22px 0;
+}
+
+.settlement-dialog dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #e8eee9;
+    padding: 13px 0;
+    font-size: 13px;
+}
+
+.settlement-dialog dt {
+    color: #637368;
+}
+
+.settlement-dialog dd {
+    margin: 0;
+    font-weight: 700;
+}
+
+.settlement-dialog .dialog-note {
+    margin-bottom: 0;
+    font-size: 11px;
+}
+
+@media (max-width: 900px) {
+    .balance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        min-height: 62px;
+        padding: 0 16px;
+    }
+
+    .store-profile {
+        gap: 9px;
+    }
+
+    .store-name {
+        font-size: 11px;
+    }
+
+    .store-name small {
+        font-size: 9px;
+    }
+
+    .store-avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+    .wallet-content {
+        width: min(100% - 32px, 540px);
+        padding-top: 24px;
+    }
+
+    .page-heading h1 {
+        font-size: 23px;
+    }
+
+    .balance-grid {
+        gap: 10px;
+    }
+
+    .balance-card {
+        min-height: 118px;
+        padding: 14px;
+    }
+
+    .balance-label {
+        align-items: flex-start;
+        font-size: 10px;
+    }
+
+    .balance-card > strong {
+        font-size: 20px;
+    }
+
+    .balance-card > p {
+        font-size: 9px;
+    }
+
+    .settlement-banner {
+        min-height: 0;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px;
+    }
+
+    .settlement-button {
+        width: 100%;
+    }
+
+    .transactions-card {
+        padding: 18px 14px;
+    }
+
+    .transactions-table,
+    .transactions-table tbody,
+    .transactions-table tr,
+    .transactions-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .transactions-table {
+        border-spacing: 0;
+    }
+
+    .transactions-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+
+    .transactions-table tr {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 12px;
+        margin-bottom: 10px;
+        border: 1px solid #e3ebe5;
+        border-radius: 9px;
+        padding: 12px;
+    }
+
+    .transactions-table td,
+    .transactions-table td:first-child,
+    .transactions-table td:last-child {
+        display: grid;
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 4px;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        font-size: 11px;
+        white-space: normal;
+    }
+
+    .transactions-table td::before {
+        color: #718177;
+        content: attr(data-label);
+        font-size: 9px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}

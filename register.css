@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color: #1c2b22;
+    font-family: Arial, Helvetica, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f8f6;
+}
+
+a {
+    color: inherit;
+}
+
+.registration-page {
+    width: min(100% - 80px, 1280px);
+    margin: 0 auto;
+    padding: 24px 0 28px;
+}
+
+.registration-header {
+    margin-bottom: 32px;
+}
+
+.registration-brand {
+    display: inline-flex;
+    align-items: center;
+    color: #123b29;
+    text-decoration: none;
+}
+
+.registration-brand-logo {
+    display: block;
+    width: 180px;
+    height: auto;
+    border: 5px solid #fcfbf7;
+    border-radius: 8px;
+}
+
+.registration-intro {
+    margin-bottom: 28px;
+}
+
+.registration-intro h1 {
+    margin: 0 0 9px;
+    font-size: clamp(30px, 3.2vw, 38px);
+    letter-spacing: -.5px;
+}
+
+.registration-intro p,
+.section-heading p {
+    margin: 0;
+    color: #526459;
+    font-size: 15px;
+}
+
+.registration-card {
+    border: 1px solid #e1e9e3;
+    border-radius: 14px;
+    padding: 32px 34px 28px;
+    background: #fff;
+    box-shadow: 0 4px 16px rgb(22 57 37 / 3%);
+}
+
+.registration-section + .registration-section {
+    margin-top: 26px;
+    border-top: 1px solid #e6ece8;
+    padding-top: 24px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0 0 7px;
+    font-size: 20px;
+    letter-spacing: -.15px;
+}
+
+.section-heading p {
+    font-size: 14px;
+}
+
+.registration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px 30px;
+}
+
+.registration-field {
+    min-width: 0;
+}
+
+.registration-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #34463b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.registration-field input,
+.registration-field select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #cbd9d0;
+    border-radius: 8px;
+    outline: none;
+    padding: 0 14px;
+    background: #fcfdfc;
+    color: #26372d;
+    font: inherit;
+    font-size: 15px;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.registration-field input::placeholder,
+.registration-field select:invalid {
+    color: #64756a;
+}
+
+.registration-field input:focus,
+.registration-field select:focus {
+    border-color: #0e8750;
+    box-shadow: 0 0 0 3px rgb(14 135 80 / 12%);
+}
+
+.registration-field [aria-invalid="true"] {
+    border-color: #bd5549;
+}
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 5px;
+    color: #a53d33;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.password-match-error:empty {
+    display: none;
+}
+
+.security-section .registration-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.registration-message {
+    margin: 0 0 20px;
+    border: 1px solid #ebc8c3;
+    border-radius: 7px;
+    padding: 12px 14px;
+    background: #fff8f7;
+    color: #91382e;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.registration-message:empty {
+    display: none;
+}
+
+.registration-message.is-success {
+    border-color: #b7dfc8;
+    background: #f0faf4;
+    color: #17653e;
+}
+
+.registration-actions {
+    margin-top: 25px;
+}
+
+.terms-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #4f6256;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.terms-option input {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    margin: 1px 0 0;
+    accent-color: #0d8048;
+}
+
+.terms-option a,
+.sign-in-link strong {
+    color: #087c43;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.terms-option a:hover,
+.sign-in-link:hover strong {
+    text-decoration: underline;
+}
+
+.terms-error {
+    margin-left: 23px;
+}
+
+.registration-submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.create-account-button {
+    min-width: 250px;
+    min-height: 54px;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 20px;
+    background: #0d8048;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background .15s;
+}
+
+.create-account-button:hover {
+    background: #096b3b;
+}
+
+.create-account-button:focus-visible,
+.registration-brand:focus-visible,
+.sign-in-link:focus-visible,
+.terms-option a:focus-visible {
+    outline: 2px solid #ff851f;
+    outline-offset: 3px;
+}
+
+.sign-in-link {
+    color: #43564a;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.registration-footer {
+    margin-top: 20px;
+    color: #596a5f;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+    .registration-page {
+        width: min(100% - 36px, 680px);
+        padding-top: 18px;
+    }
+
+    .registration-header {
+        margin-bottom: 24px;
+    }
+
+    .registration-card {
+        padding: 26px 24px 23px;
+    }
+
+    .registration-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .registration-page {
+        width: min(100% - 28px, 420px);
+    }
+
+    .registration-intro {
+        margin-bottom: 18px;
+    }
+
+    .registration-card {
+        padding: 22px 18px 20px;
+        border-radius: 11px;
+    }
+
+    .registration-section + .registration-section {
+        margin-top: 21px;
+        padding-top: 20px;
+    }
+
+    .registration-grid,
+    .security-section .registration-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .registration-field input,
+    .registration-field select {
+        height: 46px;
+    }
+
+    .registration-submit-row {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .create-account-button {
+        width: 100%;
+    }
+
+    .sign-in-link {
+        text-align: center;
+    }
+}

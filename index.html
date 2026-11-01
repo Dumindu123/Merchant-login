@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#084329">
+    <title>Sign in | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="login-layout">
+        <aside class="brand-panel" aria-label="SpeedX Merchant Portal">
+            <a class="brand" href="#" aria-label="SpeedX home">
+                <img class="brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <section class="brand-intro">
+                <h1>Your business moves.</h1>
+                <p class="brand-subtitle">Your deliveries move with SpeedX.</p>
+                <p class="brand-description">One simple place to book parcels, track deliveries and manage<br class="desktop-break"> your COD payments.</p>
+            </section>
+
+            <div class="courier-slider" aria-label="Courier service highlights" aria-roledescription="carousel">
+                <article class="courier-slide is-active" aria-roledescription="slide" aria-label="1 of 3">
+                    <img
+                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+                        alt="Parcels sorted and ready for delivery"
+                        fetchpriority="high"
+                    >
+                    <div class="slide-caption">
+                        <span class="slide-kicker">PICKUP &amp; DELIVERY</span>
+                        <h2>Every parcel, on its way.</h2>
+                        <p>Reliable delivery from your store to their door.</p>
+                    </div>
+                </article>
+                <article class="courier-slide" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true" inert>
+                    <img
+                        src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+                        alt="Parcels organized in a delivery warehouse"
+                        loading="lazy"
+                    >
+                    <div class="slide-caption">
+                        <span class="slide-kicker">STORE TO DOOR</span>
+                        <h2>Your orders keep moving.</h2>
+                        <p>We help your business deliver a better experience.</p>
+                    </div>
+                </article>
+                <article class="courier-slide" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true" inert>
+                    <img
+                        src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
+                        alt="Cargo containers moving through a delivery network"
+                        loading="lazy"
+                    >
+                    <div class="slide-caption">
+                        <span class="slide-kicker">TRACK EVERY DELIVERY</span>
+                        <h2>Know where it’s going.</h2>
+                        <p>Stay up to date from pickup through delivery.</p>
+                    </div>
+                </article>
+                <button class="slider-arrow slider-previous" type="button" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+                </button>
+                <button class="slider-arrow slider-next" type="button" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+                </button>
+                <div class="slider-dots" aria-label="Choose a slide">
+                    <button class="slider-dot is-active" type="button" aria-label="Show slide 1" aria-current="true"></button>
+                    <button class="slider-dot" type="button" aria-label="Show slide 2"></button>
+                    <button class="slider-dot" type="button" aria-label="Show slide 3"></button>
+                </div>
+            </div>
+
+            <p class="brand-footer">FAST <span>•</span> RELIABLE <span>•</span> LOCAL</p>
+        </aside>
+
+        <section class="form-panel">
+            <div class="form-content">
+                <header class="form-heading">
+                    <h2>Welcome back</h2>
+                    <p>Sign in to manage your store deliveries.</p>
+                </header>
+
+                <form class="login-form" method="post" action="login.php">
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="username"
+                            placeholder="name@example.lk"
+                            required
+                        >
+                    </div>
+
+                    <div class="field password-field">
+                        <label for="password">Password</label>
+                        <div class="password-input">
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"></path>
+                                    <circle cx="12" cy="12" r="2.5"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-option">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="text-link" data-notice="Please contact support@speedx.lk to reset your password.">Forgot password?</a>
+                    </div>
+
+                    <button class="submit-button" type="submit">Sign in to Merchant Portal</button>
+                </form>
+
+                <p class="signup-prompt">
+                    <span>New to SpeedX?</span>
+                    <a href="register.php" class="text-link">Create a merchant account</a>
+                </p>
+                <p class="inline-notice" aria-live="polite"></p>
+
+                <div class="support">
+                    <span>Need assistance?</span>
+                    <a href="mailto:support@speedx.lk">support@speedx.lk</a>
+                    <span class="support-divider">|</span>
+                    <a href="tel:+94703765524">070 376 5524</a>
+                </div>
+
+                <footer class="copyright">© 2026 SpeedX Lanka (Pvt) Ltd.</footer>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

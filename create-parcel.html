@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f8f6">
+    <title>Create a New Parcel | SpeedX Merchant Portal</title>
+    <link rel="stylesheet" href="dashboard.css?v=20261101-account-menu-2">
+    <link rel="stylesheet" href="create-parcel.css">
+    <script src="merchant-profile.js?v=20261101-account-menu-2" defer></script>
+    <script src="parcel-storage.js" defer></script>
+    <script src="create-parcel.js?v=20261101-database" defer></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="dashboard-brand" href="dashboard.html" aria-label="SpeedX dashboard">
+                <img class="dashboard-brand-logo" src="assets/speedx-merchant-logo.png" alt="SpeedX — Fast, Reliable, Affordable Domestic Courier Service">
+            </a>
+
+            <p class="nav-caption">WORKSPACE</p>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="dashboard.html"><span class="nav-icon">OV</span><span>Overview</span></a>
+                <a class="nav-link" href="parcel-list.html"><span class="nav-icon">PK</span><span>Parcels</span></a>
+                <a class="nav-link is-active" href="create-parcel.html" aria-current="page"><span class="nav-icon">NP</span><span>New Parcel</span></a>
+                <a class="nav-link" href="track-shipment.html"><span class="nav-icon">TR</span><span>Track Shipment</span></a>
+                <a class="nav-link" href="cod-wallet.html"><span class="nav-icon">CW</span><span>COD &amp; Wallet</span></a>
+                <a class="nav-link" href="settlements.html"><span class="nav-icon">ST</span><span>Settlements</span></a>
+                <a class="nav-link" href="store-profile.html"><span class="nav-icon">SP</span><span>Store Profile</span></a>
+                <a class="nav-link" href="help-support.html"><span class="nav-icon">HP</span><span>Help &amp; Support</span></a>
+            </nav>
+
+            <div class="sidebar-help">
+                <span>NEED HELP?</span>
+                <a href="mailto:support@speedx.lk">Contact SpeedX Support</a>
+                <small>support@speedx.lk</small>
+            </div>
+        </aside>
+
+        <div class="dashboard-main">
+            <header class="topbar">
+                <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <a class="topbar-title topbar-back" href="dashboard.html">Merchant Portal</a>
+                <div class="store-profile">
+                    <button class="merchant-account-trigger" type="button" aria-label="Open merchant account menu" aria-haspopup="menu" aria-expanded="false">
+                        <span class="store-name">Merchant Store<small></small></span>
+                        <span class="store-avatar" aria-hidden="true">MS</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="parcel-content">
+                <div class="parcel-page-heading">
+                    <div>
+                        <a class="back-link" href="dashboard.html"><span aria-hidden="true">←</span> Back to overview</a>
+                        <h1>Create a new parcel</h1>
+                        <p>Enter recipient details and confirm the COD amount before booking.</p>
+                        <span class="step-badge">STEP 1 OF 2</span>
+                    </div>
+                </div>
+
+                <form id="create-parcel-form" class="booking-layout">
+                    <section class="booking-card recipient-card">
+                        <div class="booking-section">
+                            <div class="booking-section-heading">
+                                <h2>Recipient information</h2>
+                            </div>
+                            <div class="booking-fields recipient-fields">
+                                <label class="booking-field">
+                                    <span>Recipient full name</span>
+                                    <input name="recipient" type="text" autocomplete="name" placeholder="Customer name" maxlength="100" required>
+                                </label>
+                                <label class="booking-field">
+                                    <span>Mobile number</span>
+                                    <input name="mobile" type="tel" autocomplete="tel" placeholder="+94 77 XXX XXXX" required>
+                                </label>
+                                <label class="booking-field field-wide">
+                                    <span>Delivery address</span>
+                                    <input name="address" type="text" autocomplete="street-address" placeholder="House / building / street" maxlength="180" required>
+                                </label>
+                                <label class="booking-field">
+                                    <span>City / Town</span>
+                                    <select name="city" required>
+                                        <option value="" selected disabled>Select city</option>
+                                        <option>Colombo</option>
+                                        <option>Dehiwala</option>
+                                        <option>Galle</option>
+                                        <option>Gampaha</option>
+                                        <option>Horana</option>
+                                        <option>Kalutara</option>
+                                        <option>Kandy</option>
+                                        <option>Panadura</option>
+                                    </select>
+                                </label>
+                                <label class="booking-field">
+                                    <span>District</span>
+                                    <select name="district" required>
+                                        <option value="" selected disabled>Select district</option>
+                                        <option>Colombo</option>
+                                        <option>Galle</option>
+                                        <option>Gampaha</option>
+                                        <option>Kalutara</option>
+                                        <option>Kandy</option>
+                                    </select>
+                                </label>
+                                <label class="booking-field field-wide">
+                                    <span>Delivery instructions (optional)</span>
+                                    <input name="instructions" type="text" placeholder="Landmark, preferred time, etc." maxlength="180">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="booking-section parcel-information">
+                            <div class="booking-section-heading">
+                                <h2>Parcel information</h2>
+                            </div>
+                            <div class="booking-fields">
+                                <label class="booking-field field-wide">
+                                    <span>Parcel ID (auto-generated)</span>
+                                    <input name="trackingId" type="text" readonly required>
+                                </label>
+                                <label class="booking-field">
+                                    <span>Parcel description</span>
+                                    <input name="description" type="text" placeholder="Enter parcel contents" maxlength="120" required>
+                                </label>
+                                <label class="booking-field">
+                                    <span>Weight</span>
+                                    <select name="weight" required>
+                                        <option value="0.5" selected>0.5 kg</option>
+                                        <option value="1">1 kg</option>
+                                        <option value="2">2 kg</option>
+                                        <option value="5">5 kg</option>
+                                        <option value="10">10 kg</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="booking-side">
+                        <section class="booking-card cod-card">
+                            <div class="booking-section-heading">
+                                <h2>COD &amp; delivery</h2>
+                            </div>
+                            <div class="booking-fields cod-fields">
+                                <label class="booking-field">
+                                    <span>Cash on Delivery (COD)</span>
+                                    <div class="currency-input">
+                                        <span>Rs.</span>
+                                        <input name="cod" type="number" min="0" step="50" required>
+                                    </div>
+                                </label>
+                                <label class="booking-field">
+                                    <span>Delivery fee</span>
+                                    <div class="currency-input">
+                                        <span>Rs.</span>
+                                        <input name="delivery_fee" type="number" min="0" step="50" required>
+                                    </div>
+                                </label>
+                                <label class="booking-field">
+                                    <span>Parcel insurance</span>
+                                    <select name="insurance">
+                                        <option value="0">Not selected</option>
+                                        <option value="150">Basic cover — Rs. 150</option>
+                                        <option value="300">Extended cover — Rs. 300</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="payout-summary">
+                                <span>Estimated merchant payout</span>
+                                <strong id="payout-amount">Rs. 0</strong>
+                                <small>COD less delivery fee and insurance</small>
+                            </div>
+                        </section>
+
+                        <div class="booking-actions">
+                            <button class="secondary-button" type="button" id="save-draft">Save as Draft</button>
+                            <button class="primary-button" type="submit">Confirm Parcel Booking</button>
+                        </div>
+                        <p class="booking-hint">Verify recipient phone number and address before confirming.</p>
+                        <p class="booking-message" id="booking-message" role="status" aria-live="polite"></p>
+                    </aside>
+                </form>
+                <p class="parcel-note">Parcel bookings are saved to the merchant database.</p>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
